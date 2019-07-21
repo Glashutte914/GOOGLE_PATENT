@@ -41,12 +41,11 @@ patent_claims = soup.find("div", { "class" : "claims" }).text #索賠
 patent_abstract = soup.find("div", { "class" : "abstract" }).text #索賠
 patent_number = soup.find("span", { "itemprop" : "publicationNumber" }).text #專利號碼
 #patent_inventor = soup.find("dd", { "itemprop" : "inventor" }).text #發明者
-
-
-assigneeMetaTag = soup.find("meta", { "scheme" : "assignee"})
-patentAssignee = assigneeMetaTag.attrs["content"]
+#assigneeMetaTag = soup.find("meta", { "scheme" : "assignee"})
+#patentAssignee = assigneeMetaTag.attrs["content"]
 
 patent_inventor = soup.find_all(itemprop=re.compile('inventor'))
-print(patent_inventor)
+for inventor in soup.find_all(itemprop=re.compile('inventor')):
+   print (inventor.text, end=',')
 
 
