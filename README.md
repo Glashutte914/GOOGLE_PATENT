@@ -1,0 +1,2 @@
+# GOOGLE_PATENT
+ GOOGLE專利
